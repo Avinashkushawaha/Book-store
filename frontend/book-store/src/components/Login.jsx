@@ -2,16 +2,18 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from "react-hook-form";
 import axios from "axios"
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 function Login () {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    
 
   const onSubmit =async (data) =>{
     const userInfo={
       email:data.email,
-      password:data.password,
-     }
+      password: data.password,
+     };
+     
      await axios.post("http://localhost:4001/user/login", userInfo)
      .then((res)=>{
        console.log(res.data)

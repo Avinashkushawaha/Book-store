@@ -28,17 +28,17 @@ function Navbar ()  {
     useEffect(() =>{
         const handleScroll=() => {
             if(window.scrollY > 0){
-                setSticky(true)
+                setSticky(true);
             }
             else{
                 setSticky(false)
             }
-        }
+        };
         window.addEventListener('scroll', handleScroll)
         return () => {
             window.removeEventListener('scroll', handleScroll)
-        }
-    }, [])
+        };
+    }, []);
 
     const  navItems = (
         <>
@@ -135,4 +135,4 @@ function Navbar ()  {
   )
 }
 
-export default Navbar
+export default Navbar;

@@ -16,9 +16,10 @@ function Signup ()  {
       const onSubmit = async (data) => {
         const userInfo={
          fullname:data.fullname,
-         email:data.email,
-         password:data.password,
-        }
+         email: data.email,
+         password: data.password,
+        };
+
         await axios.post("http://localhost:4001/user/signup", userInfo)
         .then((res)=>{
           console.log(res.data)
@@ -41,7 +42,7 @@ function Signup ()  {
     <div className='flex h-screen items-center justify-center'>
         <div  className="w-[600px]">
           <div className="modal-Box ">
-            <form onSubmit={handleSubmit(onSubmit)} method="dialog">
+            <form onSubmit={handleSubmit(onSubmit)}>
               {/* if there is a button in form, it will close the modal */}
               <Link to="/" 
               className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
@@ -82,31 +83,31 @@ function Signup ()  {
             <div className='mt-4 space-y-2'>
                 <span>Password</span>
                 <br />
-                <input type="text" placeholder='Enter Your Password'
+                <input type="password" placeholder='Enter Your Password'
                 className='w-80 px-3 py-1 border rounded-md outline-none'
                 {...register("password", { required: true })}
                 />
                  <br />
                  {errors.password &&(
-                  <span className='test-sm text-red-500' >
+                  <span className='text-sm text-red-500' >
                     This field is required</span>
                   )}
             </div>
             {/* Button */}
             <div className='flex justify-around mt-4'>
-                <button className='bg-pink-500 text-white rounded-md px-3 py-1 hover:bg-pink-700 duration-200 cursor-pointer'>Signup</button>
+                <button type="submit" className='bg-pink-500 text-white rounded-md px-3 py-1 hover:bg-pink-700 duration-200 cursor-pointer'>Signup</button>
                 <p className='text-xl'>
                     Have account?{" "} 
+
                     <button
-                    
                     className='underline text-blue-500 cursor-pointer'
                      onClick={() =>
                         document.getElementById("my_modal_3").showModal()
                      }
                     >
-                        Login
+                      Login
                         </button>{" "}
-                        <Login />
+                       
                         </p>
             </div>
             </form>
@@ -114,7 +115,7 @@ function Signup ()  {
         </div>
     </div>
     </>
-  )
+  );
 }
 
-export default Signup
+export default Signup;

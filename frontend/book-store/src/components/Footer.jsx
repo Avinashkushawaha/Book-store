@@ -3,15 +3,16 @@ import React from 'react'
 function Footer ()  {
   return (
     
-    <div>
-        <hr />
+    
     <footer className="footer footer-center  text-base-content rounded dark:bg-slate-900 dark:text-white p-10">
+        <hr />
   <nav className="grid grid-flow-col gap-4">
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
+    <a href="#" className="link link-hover">About us</a>
+    <a href="#" className="link link-hover">Contact</a>
+    <a href="#" className="link link-hover">Jobs</a>
+    <a href="#" className="link link-hover">Press kit</a>
   </nav>
+
   <nav>
     <div className="grid grid-flow-col gap-4">
       <a>
@@ -50,12 +51,12 @@ function Footer ()  {
     </div>
   </nav>
   <aside>
-    <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+    <p>Copyright © {new Date().getFullYear()} - All right reserved by Avi</p>
   </aside>
 </footer>
-    </div>
     
-  )
+    
+  );
 }
 
 export default Footer

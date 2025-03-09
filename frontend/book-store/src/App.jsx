@@ -4,7 +4,7 @@ import './App.css'
 import Courses from './courses/Courses'
 import { Route, Routes} from "react-router-dom"
 import Signup from './components/Signup'
-import toast, { Toaster } from 'react-hot-toast';
+import  { Toaster } from 'react-hot-toast';
 import { useAuth } from './context/AuthProvider';
 
 function App() {
